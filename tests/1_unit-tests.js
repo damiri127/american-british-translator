@@ -172,8 +172,8 @@ suite("Unit Tests", () => {
         // Highlight translation in Mangoes are my favorite fruit.
         test("Highlight translation in Mangoes are my favorite fruit.", function (done) { 
             assert.equal(
-                translator.toBritishEnglish("Mangoes are my favorite fruit")[0],
-                'Mangoes are my <span class="highlight">favourite</span> fruit'
+                translator.toBritishEnglish("Mangoes are my favorite fruit.")[0],
+                'Mangoes are my <span class="highlight">favourite</span> fruit.'
             );
             done();
         });
