@@ -107,7 +107,7 @@ suite("Unit Tests", () => {
         test("Translate First, caramelise the onions.", function (done) { 
             assert.equal(
                 translator.toAmericanEnglish("First, caramelise the onions.")[0],
-                "F"
+                "First, caramelize the onions."
             );
             done();
         });
@@ -147,7 +147,7 @@ suite("Unit Tests", () => {
         test("Translate Have you met Mrs Kalyani?", function (done) { 
             assert.equal(
                 translator.toAmericanEnglish("Have you met Mrs Kalyani?")[0],
-                "H"
+                "Have you met Mr.s Kalyani?"
             );
             done();
         });
@@ -155,7 +155,7 @@ suite("Unit Tests", () => {
         test("Translate Prof Joyner of King's College, London.", function (done) { 
             assert.equal(
                 translator.toAmericanEnglish("Prof Joyner of King's College, London.")[0],
-                "P"
+                "Prof. Joyner of King's College, London."
             );
             done();
         });
@@ -172,21 +172,33 @@ suite("Unit Tests", () => {
         // Highlight translation in Mangoes are my favorite fruit.
         test("Highlight translation in Mangoes are my favorite fruit.", function (done) { 
             assert.equal(
-                translator.toBritishEnglish("Mangoes are my favorite fruit.")[0],
+                translator.toBritishEnglish("Mangoes are my favorite fruit.")[1],
                 'Mangoes are my <span class="highlight">favourite</span> fruit.'
             );
             done();
         });
         // Highlight translation in I ate yogurt for breakfast.
         test("Highlight translation in I ate yogurt for breakfast.", function (done) { 
+            assert.equal(
+                translator.toBritishEnglish("I ate yogurt for breakfast.")[1],
+                'I ate <span class="highlight">yoghurt</span> for breakfast.'
+            );
             done();
         });
         // Highlight translation in We watched the footie match for a while.
         test("Highlight translation in We watched the footie match for a while.", function (done) { 
+            assert.equal(
+                translator.toAmericanEnglish("We watched the footie match for a while.")[1],
+                'We watched the <span class="highlight">soccer</span> match for a while.'
+            )
             done();
         });
         // Highlight translation in Paracetamol takes up to an hour to work.
         test("Highlight translation in Paracetamol takes up to an hour to work.", function (done) { 
+            assert.equal(
+                translator.toAmericanEnglish("Paracetamol takes up to an hour to work.")[1],
+                '<span class="highlight">Tylenol</span> takes up to an hour to work.'
+            );
             done();
         });
     });
