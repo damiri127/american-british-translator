@@ -7,7 +7,7 @@ chai.use(chaiHttp);
 
 let Translator = require('../components/translator.js');
 const { text } = require('body-parser');
-const translator = new Translator();
+
 
 suite('Functional Tests', () => {
     suite('Test with deferent request POST', function () {
